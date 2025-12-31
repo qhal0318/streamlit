@@ -15,9 +15,9 @@ st.set_page_config(
 
 # [수정 1] 경로는 무조건 '상대 경로'로! (깃허브 리포지토리 기준)
 # 데이터 파일들이 깃허브의 'data' 폴더 안에 들어있다고 가정할게.
-FILE_PATH_RWD = "data/ads_info_rwd.csv"       
-FILE_PATH_LIST = "ads_list.csv"      
-FILE_PATH_IP = "data/ip_hostname_2.json"        
+FILE_PATH_RWD = "final_ads_rwd.csv"       
+FILE_PATH_LIST = "sample_ads_list.csv"      
+FILE_PATH_IP = "ip_hostname_2.json"        
 
 DEFAULT_MAPPING = {
     'dvc_idx': 'dvc_idx',       
