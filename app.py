@@ -14,7 +14,7 @@ st.set_page_config(
 
 FILE_PATH_RWD = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/data/ads_info_rwd.csv"       # 원본 로그 파일명
 FILE_PATH_LIST = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/ads_list.csv"     # 광고 리스트 파일명
-FILE_PATH_IP = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/data/ip_hostname_2.json"        # IP 정보 파일명
+FILE_PATH_IP = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/data/ip_hostname_2.json"        # IP 정보 파일명.
 
 DEFAULT_MAPPING = {
     'dvc_idx': 'dvc_idx',       # 디바이스 ID 컬럼명
