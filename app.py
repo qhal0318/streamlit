@@ -5,7 +5,6 @@ import json
 import joblib
 import os
 
-# [중요] 이 줄을 직접 타이핑하거나, 이 코드를 전체 복사해서 쓰세요.
 from detector import prepare_data, calculate_abuse_scores, get_blocklist
 
 # --------------------------------------------------------------------------
