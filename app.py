@@ -12,6 +12,16 @@ st.set_page_config(
     page_icon="1-794df7f8.ico"
 )
 
+FILE_PATH_RWD = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/data/ads_info_rwd.csv"       # 원본 로그 파일명
+FILE_PATH_LIST = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/ads_list.csv"     # 광고 리스트 파일명
+FILE_PATH_IP = "/Users/jyj/Desktop/vs_code/streamlit 프로젝트/data/ip_hostname_2.json"        # IP 정보 파일명
+
+DEFAULT_MAPPING = {
+    'dvc_idx': 'dvc_idx',       # 디바이스 ID 컬럼명
+    'user_ip': 'user_ip',       # IP 주소 컬럼명
+    'ads_idx_list': 'ads_idx'   # 광고 ID 컬럼명
+}
+
 # 제목을 왼쪽 정렬로 예쁘게 만들기
 col1, col2 = st.columns([1, 5])
 
