@@ -6,7 +6,6 @@ import joblib
 import os
 
 from detector import prepare_data, calculate_abuse_scores, get_blocklist
-
 # --------------------------------------------------------------------------
 # 1. 페이지 설정
 # --------------------------------------------------------------------------
