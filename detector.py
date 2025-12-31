@@ -49,7 +49,7 @@ def prepare_data(ads_rwd_info, ads_list, ip_cache_data, config):
     df_original['dvc_idx'] = df_original['dvc_idx'].astype(int)
     df_original['click_date'] = pd.to_datetime(df_original['click_date'])
     
-    # Burst Attack 피쳐 계산 (원본과 동일)
+    # Burst Attack 피쳐 계산
     df_original.sort_values(by=['dvc_idx', 'click_date'], inplace=True)
     window = f"{config['burst_attack']['window_min']}min"  # CONFIG에서 가져온 값
     clicks_in_Nmin = df_original.set_index('click_date').groupby('dvc_idx').rolling(window)['ads_idx'].count().reset_index(name='clicks_in_Nmin')
