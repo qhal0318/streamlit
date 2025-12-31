@@ -115,8 +115,6 @@ def calculate_abuse_scores(df, analysis_type='conversion', clicks_per_mda_series
         consistent_ctit_mask = (df['ctit_std'] < config['consistent_ctit']['threshold_std']) & (df['total_clicks_per_dvc'] > config['consistent_ctit']['threshold_clicks'])
         df.loc[consistent_ctit_mask, 'abuse_score'] += config['consistent_ctit']['score']; df.loc[consistent_ctit_mask, 'abuse_reasons'] += '[Consistent_CTIT] '
 
-        # ▼▼▼ 여기에 새로운 "맞춤형 저격 룰" 추가 ▼▼▼
-        # --- (신규) 맞춤형 저격 룰 ---
         # 1. 유령 클릭 (비정상적으로 긴 CTIT)
         long_ctit_mask = df['ctit'] > config['fraud_long_ctit']['threshold_sec']
         df.loc[long_ctit_mask, 'abuse_score'] += config['fraud_long_ctit']['score']
@@ -126,8 +124,7 @@ def calculate_abuse_scores(df, analysis_type='conversion', clicks_per_mda_series
         single_click_mask = df['total_clicks_per_dvc'] == 1
         suspicious_single_conv_mask = single_click_mask & early_hour_mask
         df.loc[suspicious_single_conv_mask, 'abuse_score'] += config['suspicious_single_conv']['score']
-        df.loc[suspicious_single_conv_mask, 'abuse_reasons'] += '[Suspicious_Single_Conversion] '
-        # ▲▲▲ 여기까지 새로운 "맞춤형 저격 룰" 추가 ▲▲▲
+        df.loc[suspicious_single_conv_mask, 'abuse_reasons'] += '[Suspicious_Single_Conversion] 
 
     elif analysis_type == 'click':
         heavy_clicker_mask = df['total_clicks_per_dvc'] > config['heavy_click_spam']['threshold_clicks']
@@ -177,7 +174,6 @@ def calculate_abuse_scores(df, analysis_type='conversion', clicks_per_mda_series
 
     return df
 
-# ▼▼▼ get_blocklist 함수 수정 ▼▼▼
 def get_blocklist(df_scored, name=""):
     method = CONFIG.get('blocklist_method', 'percentile')
     
