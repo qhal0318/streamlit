@@ -6,8 +6,7 @@ import joblib
 import os
 
 # detector.py 파일이 같은 폴더에 있어야 합니다.
-from detector import prepare_data, calculate_abuse_scores, get_blocklist
-
+from detector import prepare_data, calculate_abuse_scores, get_bloklist
 # --------------------------------------------------------------------------
 # 1. 페이지 설정
 # --------------------------------------------------------------------------
