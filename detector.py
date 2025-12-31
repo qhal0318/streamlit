@@ -124,7 +124,7 @@ def calculate_abuse_scores(df, analysis_type='conversion', clicks_per_mda_series
         single_click_mask = df['total_clicks_per_dvc'] == 1
         suspicious_single_conv_mask = single_click_mask & early_hour_mask
         df.loc[suspicious_single_conv_mask, 'abuse_score'] += config['suspicious_single_conv']['score']
-        df.loc[suspicious_single_conv_mask, 'abuse_reasons'] += '[Suspicious_Single_Conversion] 
+        df.loc[suspicious_single_conv_mask, 'abuse_reasons'] += '[Suspicious_Single_Conversion]'
 
     elif analysis_type == 'click':
         heavy_clicker_mask = df['total_clicks_per_dvc'] > config['heavy_click_spam']['threshold_clicks']
